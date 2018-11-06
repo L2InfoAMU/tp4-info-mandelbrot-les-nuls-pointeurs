@@ -7,5 +7,7 @@ Le but du TP sera de corriger le code de la classe `Complex` en s'aidant de test
 
 ## Membres du projet
 
-- NOM, prénom, numéro de groupe, du premier participant
-- NOM, prénom, numéro de groupe, du deuxième participant
+
+
+- FRIOT, Émile, G1
+- LUU-VU, Régis, G1
