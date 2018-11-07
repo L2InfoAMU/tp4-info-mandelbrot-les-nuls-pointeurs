@@ -180,4 +180,12 @@ public class ComplexTest {
         assertEquals(2*Math.sqrt(2),two.add(twoI).modulus());
     }
 
+    @Test
+    void testPow() {
+        assertEquals(Complex.ONE, Complex.I.pow(4));
+        assertEquals(two,Complex.real(Math.sqrt(2)).pow(2));
+        assertEquals(two.pow(2),new Complex(0,Math.sqrt(2)).pow(4));
+        assertEquals(Complex.I, Complex.I.pow(13));
+        assertEquals(Complex.real(Math.pow(3,14)),Complex.real(3).pow(14));
+    }
 }
