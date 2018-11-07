@@ -188,4 +188,13 @@ public class ComplexTest {
         assertEquals(Complex.I, Complex.I.pow(13));
         assertEquals(Complex.real(Math.pow(3,14)),Complex.real(3).pow(14));
     }
+
+    @Test
+    void testScale(){
+        assertEquals(two, Complex.ONE.scale(2));
+        assertEquals(twoI, Complex.I.scale(2));
+        assertEquals(Complex.ZERO,Complex.ONE.scale(0));
+        assertEquals(Complex.ZERO,Complex.ZERO.scale(42));
+        assertEquals(two.add(twoI),Complex.ONE.add(Complex.I).scale(2));
+    }
 }
