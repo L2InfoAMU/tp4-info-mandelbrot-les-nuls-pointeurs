@@ -4,6 +4,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.control.Dialog;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import mandelbrot.Complex;
 import mandelbrot.Mandelbrot;
@@ -55,6 +59,23 @@ public class Controller implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Dialog<Color> test = new Dialog<>();
+        ColorPicker colorPicker1 = new ColorPicker(colors[0]);
+        ColorPicker colorPicker2 = new ColorPicker(colors[1]);
+        ColorPicker colorPicker3 = new ColorPicker(colors[2]);
+        ColorPicker colorPicker4 = new ColorPicker(colors[3]);
+        ColorPicker colorPicker5 = new ColorPicker(colors[4]);
+        ColorPicker colorPicker6 = new ColorPicker(colors[5]);
+        test.getDialogPane().setContent(new HBox(colorPicker1, colorPicker2, colorPicker3, colorPicker4, colorPicker5, colorPicker6));
+        test.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        test.showAndWait();
+        //histogram = new Histogram(breakpoints, colors);
+        colors[0] = colorPicker1.getValue();
+        colors[1] = colorPicker2.getValue();
+        colors[2] = colorPicker3.getValue();
+        colors[3] = colorPicker4.getValue();
+        colors[4] = colorPicker5.getValue();
+        colors[5] = colorPicker6.getValue();
         render();
     }
 
