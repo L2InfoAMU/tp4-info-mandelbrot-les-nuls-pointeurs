@@ -4,9 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.Dialog;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import mandelbrot.Complex;
@@ -66,7 +64,10 @@ public class Controller implements Initializable {
         ColorPicker colorPicker4 = new ColorPicker(colors[3]);
         ColorPicker colorPicker5 = new ColorPicker(colors[4]);
         ColorPicker colorPicker6 = new ColorPicker(colors[5]);
-        test.getDialogPane().setContent(new HBox(colorPicker1, colorPicker2, colorPicker3, colorPicker4, colorPicker5, colorPicker6));
+
+        TextField valuex = new TextField("x value of the center");
+        TextField valuey = new TextField("y value of the center");
+        test.getDialogPane().setContent(new HBox(colorPicker1, colorPicker2, colorPicker3, colorPicker4, colorPicker5, colorPicker6, valuex, valuey));
         test.getDialogPane().getButtonTypes().add(ButtonType.OK);
         test.showAndWait();
         //histogram = new Histogram(breakpoints, colors);
@@ -76,6 +77,10 @@ public class Controller implements Initializable {
         colors[3] = colorPicker4.getValue();
         colors[4] = colorPicker5.getValue();
         colors[5] = colorPicker6.getValue();
+
+        int x = Integer.valueOf(valuex.getText());
+        int y = Integer.valueOf(valuey.getText());
+        camera = new Camera(x,y,3, 4.0/3.0);
         render();
     }
 
