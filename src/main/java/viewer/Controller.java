@@ -44,9 +44,6 @@ public class Controller implements Initializable {
                     Color.rgb(250, 250, 200)
             };
 
-    private void ChangeColor(int index, Color color){
-        colors[index] = color;
-    }
     /* algorithm to generate the distribution of colors */
     private Histogram histogram = new Histogram(breakpoints, colors);
 
