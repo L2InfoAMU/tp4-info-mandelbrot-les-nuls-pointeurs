@@ -95,6 +95,7 @@ public class ComplexTest {
         assertEquals(onePlusI, onePlusI.divide(Complex.ONE));
         assertEquals(new Complex(0.5, 0), Complex.ONE.divide(two));
         assertEquals(minusI,oneMinusI.divide(onePlusI));
+        assertThrows(ArithmeticException.class, ()->Complex.ONE.divide(Complex.ZERO));
     }
 
     @Test
